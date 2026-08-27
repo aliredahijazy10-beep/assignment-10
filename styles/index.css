@@ -1,0 +1,109 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    background-color: #f4f6f9;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+main > section{
+    margin-top: 70px;
+    height: 48vh;
+    width: 70vw;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: 75px 75px 300px;
+    grid-template-areas: 
+        "title title title"
+        "description description description"
+        "box-1 box-2 box-3"
+    ;
+    column-gap: 20px;
+    justify-items: center;
+}
+
+main>section>h1:first-child{
+    grid-area: title;
+    font-size: 2.8rem;
+}
+
+main>section>p:nth-child(2){
+    grid-area: description;
+    font-size: 1.2rem;
+    color: rgba(128, 128, 128, 2);
+    text-align: center;
+}
+
+main>section>section:nth-child(3){
+    grid-area: box-1;
+}
+
+main>section>section:nth-child(4){
+    grid-area: box-2;
+}
+
+main>section>section:last-child{
+    grid-area: box-3;
+}
+
+main>section>section{
+    background-color: white;
+    width: 100%;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    text-align: center;
+}
+
+main>section>section>div{
+    height: 75px;
+    width: 75px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 2rem;
+}
+
+main>section>section>p{
+    color: rgba(128, 128, 128, 2);
+    font-size: 1.2rem;
+}
+
+main>section>section:nth-child(3)>div{
+    background-image: linear-gradient(rgba(0, 0, 255, 0.6),rgba(128, 0, 128,0.5));
+    animation: animate 1s 0s linear infinite;
+    animation-direction: alternate;
+}
+
+main>section>section:nth-child(4)>div{
+    background-image: linear-gradient(rgba(255, 165, 0, 0.7));
+    animation: animate 1s 200ms linear infinite;
+    animation-direction: alternate;
+}
+
+main>section>section:last-child>div{
+    background-image: linear-gradient(rgba(114, 201, 176,0.9));
+    animation: animate 1s 400ms linear infinite;
+    animation-direction: alternate;
+}
+
+main>section>section:hover{
+    transform: translateY(-10px)
+}
+
+@keyframes animate{
+    0%{
+        transform: translateY(-20px);
+    }
+    100%{
+        transform: translateY(20px);
+    }
+}
