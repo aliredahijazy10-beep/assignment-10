@@ -107,3 +107,27 @@ main>section>section:hover{
         transform: translateY(20px);
     }
 }
+
+@media screen and (max-width:470px){
+    body{
+        height: 250vh;
+    }
+    .title{
+        font-size: 30px;
+        text-align: center;
+    }
+    main>section{
+        display: flex;
+        flex-direction: column;
+        row-gap: 20px;
+        height: 200vh;
+    }
+    main>section>section{
+        height: 100vh;
+    }
+    main>section>section>div{
+        height: 40px;
+        width: 40px;
+        font-size: 20px;
+    }
+}
